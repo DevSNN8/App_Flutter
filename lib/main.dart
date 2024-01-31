@@ -39,15 +39,8 @@ class _MyhomepageState extends State<Myhomepage> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Press"),
-            Text(
-              number.toString(),
-              style: TextStyle(fontSize: 60, color: Colors.blueGrey),
-            ),
-          ],
+        child: ListView(
+          children: data,
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -57,9 +50,10 @@ class _MyhomepageState extends State<Myhomepage> {
     );
   }
 
-  void addnumber() {
-    setState(() {
-      number++;
-    });
+  List<Widget> getData(int count) {
+    List<Widget> data = [];
+    for (var i = 0; i < count; i++) {
+      data.add(Text("List ${i + 1}"));
+    }
   }
 }
