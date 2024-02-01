@@ -40,20 +40,18 @@ class _MyhomepageState extends State<Myhomepage> {
       ),
       body: Center(
         child: ListView(
-          children: data,
+          children: getData(15),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: addnumber,
-        child: Icon(Icons.access_alarm),
       ),
     );
   }
 
+//fuction///
   List<Widget> getData(int count) {
     List<Widget> data = [];
     for (var i = 0; i < count; i++) {
-      data.add(Text("List ${i + 1}"));
+      data.add(Text("llist ${i + 1}"));
     }
+    return data;
   }
 }
