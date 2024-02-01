@@ -30,28 +30,20 @@ class _MyhomepageState extends State<Myhomepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Hello flutter",
-          style: TextStyle(
-            fontSize: 20,
+        appBar: AppBar(
+          title: Text(
+            "Choose MeNu",
+            style: TextStyle(
+              fontSize: 20,
+            ),
           ),
         ),
-      ),
-      body: Center(
-        child: ListView(
-          children: getData(15),
-        ),
-      ),
-    );
-  }
-
-//fuction///
-  List<Widget> getData(int count) {
-    List<Widget> data = [];
-    for (var i = 0; i < count; i++) {
-      data.add(Text("llist ${i + 1}"));
-    }
-    return data;
+        body: ListView.builder(
+            itemCount: 10,
+            itemBuilder: (BuildContext, int index) {
+              return ListTile(
+                title: Text("menu $index"),
+              );
+            }));
   }
 }
