@@ -10,9 +10,8 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "My app",
+      title: "APP Delivery",
       home: Myhomepage(),
-      theme: ThemeData(primarySwatch: Colors.brown),
     );
   }
 }
@@ -25,35 +24,15 @@ class Myhomepage extends StatefulWidget {
 }
 
 class _MyhomepageState extends State<Myhomepage> {
-  int number = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Hello flutter",
-          style: TextStyle(
-            fontSize: 20,
-          ),
+          "Delivery",
+          style: TextStyle(fontSize: 30),
         ),
-      ),
-      body: Center(
-        child: ListView(
-          children: data,
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: addnumber,
-        child: Icon(Icons.access_alarm),
       ),
     );
-  }
-
-  List<Widget> getData(int count) {
-    List<Widget> data = [];
-    for (var i = 0; i < count; i++) {
-      data.add(Text("List ${i + 1}"));
-    }
   }
 }
