@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,8 +10,9 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "APP Delivery",
+      title: "My app",
       home: Myhomepage(),
+      theme: ThemeData(primarySwatch: Colors.brown),
     );
   }
 }
@@ -26,20 +25,19 @@ class Myhomepage extends StatefulWidget {
 }
 
 class _MyhomepageState extends State<Myhomepage> {
+  int number = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Delivery",
-          style: TextStyle(fontSize: 30),
+          "Hello flutter",
+          style: TextStyle(
+            fontSize: 20,
+          ),
         ),
       ),
-      body: Center(
-          child: Text(
-        "Hello laos",
-        style: TextStyle(fontSize: 35),
-      )),
     );
   }
 }
