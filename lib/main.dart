@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,6 +35,11 @@ class _MyhomepageState extends State<Myhomepage> {
           style: TextStyle(fontSize: 30),
         ),
       ),
+      body: Center(
+          child: Text(
+        "Hello laos",
+        style: TextStyle(fontSize: 35),
+      )),
     );
   }
 }
