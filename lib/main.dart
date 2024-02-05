@@ -13,7 +13,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       title: "My app",
       home: Myhomepage(),
-      theme: ThemeData(primarySwatch: Colors.brown),
+      theme: ThemeData(primarySwatch: Colors.pink),
     );
   }
 }
@@ -26,12 +26,6 @@ class Myhomepage extends StatefulWidget {
 }
 
 class _MyhomepageState extends State<Myhomepage> {
-  List<Foodmenu> menu = [
-    Foodmenu("Pizza", "100"),
-    Foodmenu("Salami", "30"),
-    Foodmenu("peperoni", "25")
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,17 +37,26 @@ class _MyhomepageState extends State<Myhomepage> {
             ),
           ),
         ),
-        body: ListView.builder(
-            itemCount: menu.length,
-            itemBuilder: (BuildContext, int index) {
-              Foodmenu food = menu[index];
-              return ListTile(
-                title: Text(
-                  food.name,
-                  style: TextStyle(fontSize: 35),
-                ),
-                subtitle: Text("Price" + food.price + "dollar"),
-              );
-            }));
+        body: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.green, borderRadius: BorderRadius.circular(20)),
+              height: 80,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 66, 83, 208),
+                  borderRadius: BorderRadius.circular(20)),
+              height: 80,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 215, 114, 47),
+                  borderRadius: BorderRadius.circular(20)),
+              height: 80,
+            )
+          ],
+        ));
   }
 }
