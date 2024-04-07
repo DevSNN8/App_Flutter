@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  var app = MaterialApp(
-    title: "MaMa",
-    home: Text("Hi My Venus"),
-  );
-  runApp(app);
+  runApp(myapp());
+}
+
+class myapp extends StatelessWidget {
+  const myapp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "mark",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Beckham"),
+        ),
+        body: Text("helloooooo"),
+      ),
+    );
+    ;
+  }
 }
