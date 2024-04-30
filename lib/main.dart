@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Foodmanu.dart';
 
 void main() {
   runApp(myapp());
@@ -22,34 +23,34 @@ class myhomepage extends StatefulWidget {
 }
 
 class _myhomepageState extends State<myhomepage> {
-  int number = 0;
+  List<foodmenu> menu = [
+    foodmenu("Seafood", "80000", "assets/images/pic1.jpg"),
+    foodmenu("Beef", "75000", "assets/images/pic1.jpg"),
+    foodmenu("Rice", "10000", "assets/images/pic1.jpg"),
+    foodmenu("Noodle", "50000", "assets/images/pic1.jpg")
+  ];
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> data = [];
-    for (var i = 0; i < 10; i++) {
-      data.add(Text("Press Add $i"));
-    }
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Prgram"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: data,
+        appBar: AppBar(
+          title: Text(
+            "Chosee Manu",
+            style: TextStyle(fontSize: 30),
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: addnumber,
-        child: Icon(Icons.add),
-      ),
-    );
-  }
-
-  void addnumber() {
-    setState(() {
-      number++;
-    });
+        body: ListView.builder(
+            itemCount: menu.length,
+            itemBuilder: (BuildContext context, int index) {
+              foodmenu food = menu[index];
+              return ListTile(
+                leading: Image.asset(food.img),
+                title: Text(
+                  food.name,
+                  style: TextStyle(fontSize: 25),
+                ),
+                subtitle: Text("price" + food.price + "KIP"),
+              );
+            }));
   }
 }
