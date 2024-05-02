@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'Foodmanu.dart';
 
 void main() {
@@ -23,34 +25,157 @@ class myhomepage extends StatefulWidget {
 }
 
 class _myhomepageState extends State<myhomepage> {
-  List<foodmenu> menu = [
-    foodmenu("Seafood", "80000", "assets/images/pic1.jpg"),
-    foodmenu("Beef", "75000", "assets/images/pic1.jpg"),
-    foodmenu("Rice", "10000", "assets/images/pic1.jpg"),
-    foodmenu("Noodle", "50000", "assets/images/pic1.jpg")
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Chosee Manu",
-            style: TextStyle(fontSize: 30),
+            "MY account",
+            style: TextStyle(
+                fontSize: 25,
+                color: Color.fromARGB(255, 207, 54, 54),
+                fontWeight: FontWeight.bold),
           ),
         ),
-        body: ListView.builder(
-            itemCount: menu.length,
-            itemBuilder: (BuildContext context, int index) {
-              foodmenu food = menu[index];
-              return ListTile(
-                leading: Image.asset(food.img),
-                title: Text(
-                  food.name,
-                  style: TextStyle(fontSize: 25),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(30.0),
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 234, 127, 19),
+                    borderRadius: BorderRadius.circular(20)),
+                height: 150,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        "Balance",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        "30000",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.right,
+                      ),
+                    )
+                  ],
                 ),
-                subtitle: Text("price" + food.price + "KIP"),
-              );
-            }));
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                padding: const EdgeInsets.all(30.0),
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 22, 199, 72),
+                    borderRadius: BorderRadius.circular(20)),
+                height: 100,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        "Income",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        "18000",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.right,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                padding: const EdgeInsets.all(30.0),
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 233, 25, 25),
+                    borderRadius: BorderRadius.circular(20)),
+                height: 100,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        "Expense",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        "8000",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.right,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Container(
+                padding: const EdgeInsets.all(30.0),
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 25, 63, 233),
+                    borderRadius: BorderRadius.circular(20)),
+                height: 100,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        "Arrears",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        "100",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.right,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }
