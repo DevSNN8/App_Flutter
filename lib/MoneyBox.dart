@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Moneybox extends StatelessWidget {
   String title;
   double amount;
   Color color;
   double size;
-  const Moneybox({super.key});
+
+  Moneybox(this.amount, this.color, this.size, this.title);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class Moneybox extends StatelessWidget {
           ),
           Expanded(
             child: Text(
-              amount.toString(),
+              '${NumberFormat("#,###").format(amount)}',
               style: TextStyle(
                   fontSize: 30,
                   color: Colors.white,
