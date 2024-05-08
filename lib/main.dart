@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'MoneyBox.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(myapp());
@@ -29,7 +29,13 @@ class _myhomepageState extends State<myhomepage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    print("call ini State");
+    getExchangeRate();
+  }
+
+  Future<void> getExchangeRate() async {
+    var url = "https://api.exchangeratesapi.io/latest?symbols=USD,THB";
+    var response = await http.get(url as Uri);
+    print(response.body);
   }
 
   @override
@@ -44,6 +50,8 @@ class _myhomepageState extends State<myhomepage> {
                 fontWeight: FontWeight.bold),
           ),
         ),
-        body: Container());
+        body: Column(
+          children: [],
+        ));
   }
 }
