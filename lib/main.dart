@@ -32,7 +32,7 @@ class Myapp extends StatelessWidget {
               ]),
             ),
             body: TabBarView(children: [
-              Myhome(),
+              Icon(Icons.home),
               Icon(Icons.shop),
               Icon(Icons.contact_mail),
             ]),
