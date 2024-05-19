@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/screen/home.dart';
 
 void main() {
   runApp(Myapp());
@@ -10,34 +11,6 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "My app",
-      home: Myhomepage(),
-      theme: ThemeData(primarySwatch: Colors.brown),
-    );
-  }
-}
-
-class Myhomepage extends StatefulWidget {
-  const Myhomepage({super.key});
-
-  @override
-  State<Myhomepage> createState() => _MyhomepageState();
-}
-
-class _MyhomepageState extends State<Myhomepage> {
-  int number = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Hello flutter",
-          style: TextStyle(
-            fontSize: 20,
-          ),
-        ),
-      ),
-    );
+        title: "My app", home: HomeScreen(), theme: ThemeData.dark());
   }
 }
