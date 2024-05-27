@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Page/intro-page.dart';
+
 void main() {
   runApp(Myapp());
 }
@@ -9,6 +11,9 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: IntroPage(),
+    );
   }
 }
