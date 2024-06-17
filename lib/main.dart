@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'Page/intro-page.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(Myapp());
@@ -11,9 +10,10 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: IntroPage(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Snaxk'),
+      ),
     );
   }
 }
